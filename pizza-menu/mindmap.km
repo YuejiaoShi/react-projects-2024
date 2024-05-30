@@ -1,0 +1,62 @@
+{
+    "root": {
+        "data": {
+            "id": "d0zhbe4jw880",
+            "created": 1714685600057,
+            "text": "App",
+            "expandState": "expand"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "d0zhbq8n2js0",
+                    "created": 1714685626425,
+                    "text": "Header",
+                    "expandState": "expand"
+                },
+                "children": []
+            },
+            {
+                "data": {
+                    "id": "d0zhbralggw0",
+                    "created": 1714685628720,
+                    "text": "Menu",
+                    "expandState": "expand"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "d0zhdhfcur40",
+                            "created": 1714685763969,
+                            "text": "Pizza",
+                            "expandState": "expand"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "d0zhbsffsj40",
+                    "created": 1714685631190,
+                    "text": "Footer",
+                    "expandState": "expand"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "d0zhcva1xyg0",
+                            "created": 1714685715759,
+                            "text": "Order",
+                            "expandState": "expand"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    "template": "structure",
+    "theme": "fresh-blue",
+    "version": "1.4.43"
+}
