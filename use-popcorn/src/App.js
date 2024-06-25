@@ -52,10 +52,10 @@ const average = (arr) =>
 export default function App() {
   const [movies, setMovies] = useState(tempMovieData);
   return (
-    <div className="App">
-      <Nav movies={movies} />;
+    <>
+      <Nav movies={movies} />
       <Main movies={movies} />
-    </div>
+    </>
   );
 }
 function Nav({ movies }) {
@@ -88,9 +88,11 @@ function Search() {
   );
 }
 function NumResults({ movies }) {
-  <p className="num-results">
-    Found <strong>{movies.length}</strong> results
-  </p>;
+  return (
+    <p className="num-results">
+      Found <strong>{movies.length}</strong> results
+    </p>
+  );
 }
 function Main({ movies }) {
   return (
