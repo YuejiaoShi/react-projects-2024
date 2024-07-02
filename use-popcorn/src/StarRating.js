@@ -11,6 +11,7 @@ const starContainerStyle = {
   display: "flex",
 };
 
+// will use TypeScript to specify the prop type in the future
 StarRating.propTypes = {
   maxRating: PropTypes.number,
   defaultRating: PropTypes.number,
@@ -20,6 +21,7 @@ StarRating.propTypes = {
   className: PropTypes.string,
   onSetRating: PropTypes.func,
 };
+// ----------------------------------------------------------
 
 export default function StarRating({
   maxRating = 5,
@@ -28,12 +30,14 @@ export default function StarRating({
   className = "",
   messages = [],
   defaultRating = 0,
+  onSetRating,
 }) {
   const [rating, setRating] = useState(defaultRating);
   const [tempRating, setTempRating] = useState(0);
 
   function handleRating(index) {
     setRating(index + 1);
+    // onSetRating ? onSetRating(rating) : undefined;
   }
   const textStyle = {
     lineHeight: "1",
