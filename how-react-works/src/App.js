@@ -77,14 +77,16 @@ function TabContent({ item }) {
     // nor handleInc();handleInc();handleInc()
     // because the 3 are batched together, not synchronous
     // So! always use callback func:
-    setLikes((likes)=>likes + 3);
+    setLikes((likes) => likes + 3);
   }
 
   function handleUndo() {
     setShowDetails(true);
     setLikes(0);
   }
-  
+  function handleUndoLater() {
+    setTimeout(handleUndo, 2000);
+  }
 
   return (
     <div className="tab-content">
@@ -105,7 +107,7 @@ function TabContent({ item }) {
 
       <div className="tab-undo">
         <button onClick={handleUndo}>Undo</button>
-        <button>Undo in 2s</button>
+        <button onClick={handleUndoLater}>Undo in 2s</button>
       </div>
     </div>
   );
