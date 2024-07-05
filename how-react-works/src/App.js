@@ -65,8 +65,27 @@ function TabContent({ item }) {
   const [showDetails, setShowDetails] = useState(true);
   const [likes, setLikes] = useState(0);
 
+  // console.log("11111"); // prove rendering is calling the component functions
+
   function handleInc() {
-    setLikes(likes + 1);
+    setLikes((likes) => likes + 1);
+  }
+  function handleTripleInc() {
+    // not setLikes(likes + 3);
+    // setLikes(likes + 3);
+    // setLikes(likes + 3);
+    // nor handleInc();handleInc();handleInc()
+    // because the 3 are batched together, not synchronous
+    // So! always use callback func:
+    setLikes((likes) => likes + 3);
+  }
+
+  function handleUndo() {
+    setShowDetails(true);
+    setLikes(0);
+  }
+  function handleUndoLater() {
+    setTimeout(handleUndo, 2000);
   }
 
   return (
@@ -82,13 +101,13 @@ function TabContent({ item }) {
         <div className="hearts-counter">
           <span>{likes} ❤️</span>
           <button onClick={handleInc}>+</button>
-          <button>+++</button>
+          <button onClick={handleTripleInc}>+++</button>
         </div>
       </div>
 
       <div className="tab-undo">
-        <button>Undo</button>
-        <button>Undo in 2s</button>
+        <button onClick={handleUndo}>Undo</button>
+        <button onClick={handleUndoLater}>Undo in 2s</button>
       </div>
     </div>
   );
